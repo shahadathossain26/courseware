@@ -27,7 +27,7 @@ const Header = () => {
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/blog'}>Blog</Link>
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/contactus'}>Contact Us</Link>
                     </Nav>
-                    <Button variant="outline-primary">Sign In</Button>
+                    <Link to={'/login'}><Button variant="outline-primary">Sign In</Button></Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
