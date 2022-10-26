@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './Sidenav.css';
+import Button from 'react-bootstrap/Button';
 
 const Sidenav = () => {
     const [courses, setCourses] = useState([]);
@@ -11,16 +13,24 @@ const Sidenav = () => {
             .then(data => setCourses(data))
     }, [])
     return (
-        <div>
-            <h3>Courses length: {courses.length}</h3>
-            <div>
+        <div className='vl px-3 courses shadow p-3 mb-5 bg-body rounded'>
+            <h2 className='mb-4'> Our Courses</h2>
+
+            <div className='w-60'>
                 {
                     courses.map(course => <p key={course.id}>
-                        <Link to={`/courses/${course.id}`}>{course.name}</Link>
+                        <Link className='' to={`/courses/${course.id}`}>
+                            <Button className='course-item fw-bold w-100' variant="primary" size="lg">
+                                {course.name}
+                            </Button>
+                        </Link>
                     </p>)
                 }
+
             </div>
+
         </div>
+
     );
 };
 

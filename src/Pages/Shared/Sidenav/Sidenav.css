@@ -1,0 +1,11 @@
+.courses{
+    background-color: skyblue;
+}
+
+.course-item:focus{
+    background-color: rgb(20, 25, 29);
+}
+.vl{
+    border-right: 4px solid black;
+    height: 450px;
+}

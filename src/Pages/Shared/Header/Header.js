@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Image } from 'react-bootstrap';
-import { FaUser } from "react-icons/fa";
+// import { FaUser } from "react-icons/fa";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='px-5 py-4 mb-4 ' expand="lg">
+        <Navbar className='px-5 py-4  shadow-lg p-3  bg-body rounded' expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#"><Link to={'/'}>Images</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -69,7 +69,7 @@ const Header = () => {
 
                                 <Image title={user.displayName} style={{ height: '50px', cursor: 'pointer' }} roundedCircle src={user.photoURL}></Image>
                                 <Button className='ms-3' onClick={handleLogOut} variant="primary">Sign out</Button>
-                                
+
                             </>
                             :
                             <>

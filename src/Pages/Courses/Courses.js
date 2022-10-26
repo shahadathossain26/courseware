@@ -2,12 +2,14 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import Sidenav from '../Shared/Sidenav/Sidenav';
+import './Courses.css'
 
 const Courses = () => {
     return (
-        <Container>
-            <Row>
-                <Col lg='3'>
+        <div className='background'>
+            <Container >
+            <Row className='d-flex justify-content-between'>
+                <Col  lg='3'>
                     <Sidenav></Sidenav>
                 </Col>
                 
@@ -17,6 +19,7 @@ const Courses = () => {
                 
             </Row>
         </Container>
+        </div>
     );
 };
 

@@ -6,9 +6,9 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Course = () => {
     const course = useLoaderData();
-    console.log(course);
+    
     return (
-        <Card style={{ width: '20rem' }}>
+        <Card className='m-auto' style={{ width: '20rem' }}>
         <Card.Img className='img-fluid' style={{ width: '100%', height: '260px' }} variant="top" src={course.image} />
         <Card.Body className='text-start'>
             <Card.Title className='fw-bold fs-3'>{course.name}</Card.Title>
