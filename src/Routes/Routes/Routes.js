@@ -4,6 +4,7 @@ import Main from "../../layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import Contactus from "../../Pages/Contact Us/Contactus";
 import Course from "../../Pages/Course/Course";
+import CourseDetails from "../../Pages/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses";
 
 
@@ -48,6 +49,11 @@ export const routes = createBrowserRouter([
                         path: `/courses/:id`,
                         element: <Course></Course>,
                         loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                    },
+                    {
+                        path: `/courses/:id/details`,
+                        element: <CourseDetails></CourseDetails>,
+                        loader: (params) => fetch(`http://localhost:5000/courses/${params.id}`)
                     }
                     // {
                     //     path: '/courses/swift',

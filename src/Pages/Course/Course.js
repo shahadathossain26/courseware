@@ -2,7 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { HiStar } from "react-icons/hi";
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Course = () => {
     const course = useLoaderData();
@@ -28,7 +28,7 @@ const Course = () => {
                 </div>
                 <p className='fw-semibold fs-4 mt-3'>Course Fee:- ${course.fee}</p>
             </Card.Text>
-            <Button variant="primary">See details</Button>
+            <Link to={`/courses/${course.id}/details`}><Button variant="primary">See details</Button></Link>
         </Card.Body>
     </Card>
     );
