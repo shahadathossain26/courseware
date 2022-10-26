@@ -23,7 +23,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='px-5 py-4 ' expand="lg">
+        <Navbar className='px-5 py-4 mb-4 ' expand="lg">
             <Container fluid>
                 <Navbar.Brand href="#"><Link to={'/'}>Images</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -66,10 +66,10 @@ const Header = () => {
                     <div>
                         {user?.uid ?
                             <>
-                                
+
                                 <Image title={user.displayName} style={{ height: '50px', cursor: 'pointer' }} roundedCircle src={user.photoURL}></Image>
-                                <Button className='ms-3' variant="primary">Sign out</Button>
-                                <Link className='ms-3' to={'/login'}><Button variant="outline-primary">Sign In</Button></Link>
+                                <Button className='ms-3' onClick={handleLogOut} variant="primary">Sign out</Button>
+                                
                             </>
                             :
                             <>

@@ -5,18 +5,18 @@ import Sidenav from '../Shared/Sidenav/Sidenav';
 
 const Courses = () => {
     return (
-        <div>
-            <Container>
-                <Row>
-                    <Col lg="3">
-                        <Sidenav ></Sidenav>
-                    </Col>
-                    <Col lg="10">
-                        <Outlet></Outlet>
-                    </Col>
-                </Row>
-            </Container>
-        </div>
+        <Container>
+            <Row>
+                <Col lg='3'>
+                    <Sidenav></Sidenav>
+                </Col>
+                
+                <Col lg='9'>
+                    <Outlet></Outlet>
+                </Col>
+                
+            </Row>
+        </Container>
     );
 };
 

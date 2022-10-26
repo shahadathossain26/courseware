@@ -2,14 +2,13 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { HiStar } from "react-icons/hi";
-import Pythonimage from "./python.jpg"
-
-const Python = () => {
+import Javaimage from "./java.png"
+const Java = () => {
     return (
         <Card style={{ width: '20rem' }}>
-            <Card.Img className='img-fluid' style={{ width: '100%', height: '260px' }} variant="top" src={Pythonimage} />
+            <Card.Img className='img-fluid' style={{ width: '100%', height: '260px' }} variant="top" src={Javaimage} />
             <Card.Body className='text-start'>
-                <Card.Title className='fw-bold fs-3'>Python</Card.Title>
+                <Card.Title className='fw-bold fs-3'>Java</Card.Title>
                 <Card.Text >
                     <div className="reviews">
                         <div className="ratings ">
@@ -18,13 +17,13 @@ const Python = () => {
                             <HiStar className='fs-4 text-warning'></HiStar>
                             <HiStar className='fs-4 text-warning'></HiStar>
                             <HiStar className='fs-4 text-warning'></HiStar>
-                            <span className='fw-lighter'>(953 reviews)</span>
+                            <span className='fw-lighter'>(492 reviews)</span>
                         </div>
-                        <span className='fw-semibold fs-5'>Total Students:- 1482</span>
+                        <span className='fw-semibold fs-5'>Total Students:- 823</span>
 
 
                     </div>
-                    <p className='fw-semibold fs-4 mt-3'>Course Fee:- $280</p>
+                    <p className='fw-semibold fs-4 mt-3'>Course Fee:- $260</p>
                 </Card.Text>
                 <Button variant="primary">See details</Button>
             </Card.Body>
@@ -32,4 +31,4 @@ const Python = () => {
     );
 };
 
-export default Python;
+export default Java;
