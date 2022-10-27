@@ -79,12 +79,14 @@ const Login = () => {
                     Login
                 </Button>
             </Form>
-            <p className='fs-5 fw-bold mt-4'>Or</p>
-            <ButtonGroup vertical >
+            <div className='text-center'>
+            <p className='fs-5 fw-bold mt-4 '>Or</p>
+            <ButtonGroup  vertical >
                 <Button onClick={handleGoogleSignIn} className='mb-3 rounded' variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
                 <Button onClick={handleGithubProvider} className='rounded' variant="outline-primary"><FaFacebook></FaFacebook> Login with facebook</Button>
 
             </ButtonGroup>
+            </div>
         </div>
 
     );

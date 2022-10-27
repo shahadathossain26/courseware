@@ -4,33 +4,48 @@ import Card from 'react-bootstrap/Card';
 import { HiStar } from "react-icons/hi";
 import { Link, useLoaderData } from 'react-router-dom';
 
+import Pdf from "react-to-pdf";
+const ref = React.createRef();
+
 const Course = () => {
     const course = useLoaderData();
-    
+
     return (
-        <Card className='m-auto' style={{ width: '20rem' }}>
-        <Card.Img className='img-fluid' style={{ width: '100%', height: '260px' }} variant="top" src={course.image} />
-        <Card.Body className='text-start'>
-            <Card.Title className='fw-bold fs-3'>{course.name}</Card.Title>
-            <Card.Text >
-                <div className="reviews">
-                    <div className="ratings ">
-                        <HiStar className='fs-4 text-warning'></HiStar>
-                        <HiStar className='fs-4 text-warning'></HiStar>
-                        <HiStar className='fs-4 text-warning'></HiStar>
-                        <HiStar className='fs-4 text-warning'></HiStar>
-                        <HiStar className='fs-4 text-warning'></HiStar>
-                        <span className='fw-lighter'>(514 reviews)</span>
+        <Card className='m-auto' style={{ width: '22rem' }}>
+            <Card.Img className='img-fluid' style={{ width: '100%', height: '260px' }} variant="top" src={course.image} />
+            <Card.Body className='text-start'>
+                <Card.Title className='fw-bold fs-3'>{course.name}</Card.Title>
+                <Card.Text >
+                    <div className="reviews">
+                        <div className="ratings ">
+                            <HiStar className='fs-4 text-warning'></HiStar>
+                            <HiStar className='fs-4 text-warning'></HiStar>
+                            <HiStar className='fs-4 text-warning'></HiStar>
+                            <HiStar className='fs-4 text-warning'></HiStar>
+                            <HiStar className='fs-4 text-warning'></HiStar>
+                            <span className='fw-lighter'>(514 reviews)</span>
+                        </div>
+                        <span className='fw-semibold fs-5'>Total Students:- {course.review}</span>
+
+
                     </div>
-                    <span className='fw-semibold fs-5'>Total Students:- {course.review}</span>
+                    <p className='fw-semibold fs-4 mt-3'>Course Fee:- ${course.fee}</p>
+                </Card.Text>
 
+                <Link to={`/courses/${course.id}/details`}><Button variant="primary  w-20 fw-semibold">See details</Button></Link>
 
+                <Link to={`/courses/${course.id}/checkout`}><Button variant="primary w-20 ms-4 fw-semibold">Get premium access</Button></Link>
+
+                <div>
+                    <Pdf targetRef={ref} filename="div-blue.pdf">
+                        {({ toPdf }) => (
+                            <button className=' mt-3 btn btn-primary' onClick={toPdf}>Download</button>
+                        )}
+                    </Pdf>
+                    {/* <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} /> */}
                 </div>
-                <p className='fw-semibold fs-4 mt-3'>Course Fee:- ${course.fee}</p>
-            </Card.Text>
-            <Link to={`/courses/${course.id}/details`}><Button variant="primary">See details</Button></Link>
-        </Card.Body>
-    </Card>
+            </Card.Body>
+        </Card>
     );
 };
 
