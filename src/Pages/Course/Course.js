@@ -34,16 +34,9 @@ const Course = () => {
 
                 <Link to={`/courses/${course.id}/details`}><Button variant="primary  w-20 fw-semibold">See details</Button></Link>
 
-                <Link to={`/courses/${course.id}/checkout`}><Button variant="primary w-20 ms-4 fw-semibold">Get premium access</Button></Link>
+                
 
-                <div>
-                    <Pdf targetRef={ref} filename="div-blue.pdf">
-                        {({ toPdf }) => (
-                            <button className=' mt-3 btn btn-primary' onClick={toPdf}>Download</button>
-                        )}
-                    </Pdf>
-                    {/* <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} /> */}
-                </div>
+                
             </Card.Body>
         </Card>
     );
