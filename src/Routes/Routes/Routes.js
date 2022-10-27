@@ -29,11 +29,19 @@ import PrivateRoute from "./PrivateRoute";
 
 
 export const routes = createBrowserRouter([
+    {
+        path: '*',
+        element: <h1>Sorry!!! Your content is not found</h1>
+    },
 
     {
         path: '/',
         element: <Main></Main>,
         children: [
+            {
+                path: '*',
+                element: <p>Sorry!!! Your content is not found</p>
+            },
             {
                 path: '/',
                 element: <Home></Home>,
@@ -50,17 +58,17 @@ export const routes = createBrowserRouter([
                     {
                         path: `/courses/:id`,
                         element: <Course></Course>,
-                        loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}`)
+                        loader: ({ params }) => fetch(`https://courseware-server.vercel.app/courses/${params.id}`)
                     },
                     {
                         path: `/courses/:id/details`,
                         element: <CourseDetails></CourseDetails>,
-                        loader: ({params}) => fetch(`http://localhost:5000/courses/${params.id}/details`)
+                        loader: ({ params }) => fetch(`https://courseware-server.vercel.app/courses/${params.id}/details`)
                     },
                     {
                         path: `/courses/:id/checkout`,
                         element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                        loader: ({params})=> fetch(`http://localhost:5000/courses/${params.id}/checkout`)
+                        loader: ({ params }) => fetch(`https://courseware-server.vercel.app/courses/${params.id}/checkout`)
                     }
                     // {
                     //     path: '/courses/swift',
@@ -108,7 +116,7 @@ export const routes = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
-            
+
 
         ]
     }

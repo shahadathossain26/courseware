@@ -44,7 +44,7 @@ const Header = () => {
                                 <>
 
                                     <Image title={user.displayName} style={{ height: '50px', cursor: 'pointer' }} roundedCircle src={user.photoURL}></Image>
-                                    <Button className='ms-3' onClick={handleLogOut} variant="primary">Sign out</Button>
+                                    <Button className='' onClick={handleLogOut} variant="primary">Sign out</Button>
 
                                 </>
                                 :
