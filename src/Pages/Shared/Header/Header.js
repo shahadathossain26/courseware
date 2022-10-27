@@ -10,7 +10,8 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import './Header.css'
+import './Header.css';
+import Logo from './logo.png'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -25,7 +26,7 @@ const Header = () => {
     return (
         <Navbar className='px-5 py-4  shadow-lg p-3  bg-body rounded' expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#"><Link to={'/'}>Images</Link></Navbar.Brand>
+                <Navbar.Brand href="#"><Link to={'/'}><Image className='logo' src={Logo}></Image></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -38,46 +39,24 @@ const Header = () => {
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/support'}>Support</Link>
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/blog'}>Blog</Link>
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/contactus'}>Contact Us</Link>
-                    </Nav>
-                    <Nav>
-                        {/* <Nav.Link href="#deets">{
-                            user.uid ?
+                        <div className='nav-btn'>
+                            {user?.uid ?
                                 <>
-                                    <span>{user.displayName}</span>
-                                    <button onClick={handleLogOut}>logout</button>
+
+                                    <Image title={user.displayName} style={{ height: '50px', cursor: 'pointer' }} roundedCircle src={user.photoURL}></Image>
+                                    <Button className='ms-3' onClick={handleLogOut} variant="primary">Sign out</Button>
+
                                 </>
                                 :
                                 <>
-                                    <Link to='/login'>Login</Link>
-                                    <Link to='/register'>Register</Link>
+                                    <Link className='ms-3' to={'/login'}><Button variant="outline-primary">Sign In</Button></Link>
 
                                 </>
-
-
-                        }
-                        </Nav.Link> */}
-                        {/* <Nav.Link eventKey={2} href="#memes">
-                            {user.photoURL ?
-                                <Image style={{ height: '40px' }} roundedCircle src={user.photoURL}></Image>
-                                : <FaUser></FaUser>
                             }
-                        </Nav.Link> */}
+                        </div>
                     </Nav>
-                    <div>
-                        {user?.uid ?
-                            <>
 
-                                <Image title={user.displayName} style={{ height: '50px', cursor: 'pointer' }} roundedCircle src={user.photoURL}></Image>
-                                <Button className='ms-3' onClick={handleLogOut} variant="primary">Sign out</Button>
 
-                            </>
-                            :
-                            <>
-                                <Link className='ms-3' to={'/login'}><Button variant="outline-primary">Sign In</Button></Link>
-
-                            </>
-                        }
-                    </div>
 
                 </Navbar.Collapse>
             </Container>

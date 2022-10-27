@@ -9,7 +9,7 @@ import { Image } from 'react-bootstrap';
 const Home = () => {
     return (
         <div className=''>
-          <section className='banner d-flex container justify-content-between'>
+          <section className='banner d-lg-flex container justify-content-between'>
             <div className="banner-info me-5 w-45 pt-5">
               <h1 className='banner-title fw-bold mb-4'>A <span className='text-primary'>Learing Platform</span> That Helps You To Learn Faster</h1>
               <p className='mb-3'>Let us help you to learn the programming language that you wanted to learn to becoming a great programmer and a great person.</p>

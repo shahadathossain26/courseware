@@ -11,7 +11,7 @@ const CourseDetails = () => {
     const courseDetails = useLoaderData();
     console.log(courseDetails);
     return (
-        <div className='d-flex justify-content-between ps-5 pt-5 pe-0'>
+        <div className='d-lg-flex justify-content-between ps-lg-5 pt-5 pe-0'>
             <div className="course-details w-40">
                 <h2 className='text-center fw-bold'>Learn {courseDetails.name} from scratch.</h2>
                 <div className='d-flex justify-content-between pt-3 mb-3'>
@@ -51,7 +51,7 @@ const CourseDetails = () => {
                     {/* <div style={{ width: 500, height: 500, background: 'blue' }} ref={ref} /> */}
                 
             </div>
-            <div className='ms-5'>
+            <div className='ms-lg-5 mt-5 mt-lg-0'>
                 <Image className="course-image rounded" src={courseDetails.image}></Image>
             </div>
         </div>
