@@ -36,20 +36,20 @@ const Header = () => {
                     >
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/home'}>Home</Link>
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/courses'}>Courses</Link>
-                        <Link className='text-decoration-none text-black fw-bold m-2' to={'/support'}>Support</Link>
+                        {/* <Link className='text-decoration-none text-black fw-bold m-2' to={'/support'}>Support</Link> */}
                         <Link className='text-decoration-none text-black fw-bold m-2' to={'/blog'}>Blog</Link>
-                        <Link className='text-decoration-none text-black fw-bold m-2' to={'/contactus'}>Contact Us</Link>
+                        {/* <Link className='text-decoration-none text-black fw-bold m-2' to={'/contactus'}>Contact Us</Link> */}
                         <div className='nav-btn'>
                             {user?.uid ?
                                 <>
 
                                     <Image title={user.displayName} style={{ height: '50px', cursor: 'pointer' }} roundedCircle src={user.photoURL}></Image>
-                                    <Button className='' onClick={handleLogOut} variant="primary">Sign out</Button>
+                                    <Button className='ml-20' onClick={handleLogOut} variant="primary">Sign out</Button>
 
                                 </>
                                 :
                                 <>
-                                    <Link className='ms-3' to={'/login'}><Button variant="outline-primary">Sign In</Button></Link>
+                                    <Link className='ms-5' to={'/login'}><Button variant="outline-primary">Sign In</Button></Link>
 
                                 </>
                             }
